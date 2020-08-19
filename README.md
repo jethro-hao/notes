@@ -1,8 +1,8 @@
 # GIT
 ## 初次使用git
 
-* 配置用户名：git config --global user.name "hao_zhuo" 
-* 配置用户邮箱：git config --global user.email "hao_zhuo@axintsoft.com" 
+* 配置用户名：git config --global user.name "xxx" 
+* 配置用户邮箱：git config --global user.email "xxx" 
 * 查看配置：git config --list
 * 新建分支：git branch 分支名
 * 切换分支：git checkout 分支名
