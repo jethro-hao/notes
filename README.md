@@ -16,7 +16,9 @@
 * 根据操作记录回退：git reset --hard 版本号
 
 ## 基本命令
-* 拉取远程代码：git clone 仓库地址
+* 克隆远程代码：git clone 仓库地址
+* 拉取更新：git pull
+* 推送：git push
 * 创建初始化本地仓库： git init
 * 查看状态：git status
 * 查看文件修改内容：git diff 文件名
