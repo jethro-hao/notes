@@ -47,7 +47,7 @@ SELECT * FROM 表名 WHERE 字段名="某值" OR 字段名="某值"<br> <br>
 SELECT * FROM 表名  WHERE 字段名 LIKE '%关键字%' 	<br>
 (关键字左右两边任意个字符) <br> <br>
 SELECT * FROM 表名  WHERE 字段名 LIKE '\_关键字\__' 	<br>
-(关键字左右两边任意个字符)<br> <br>
+(关键字左边一个字符，右边两个字符)<br> <br>
 
 注意：\* 为返回全部数据，\* 可以换成字段名<br>
 
