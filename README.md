@@ -40,21 +40,21 @@
 # MySQL
 
 ## 查询
-SELECT * FROM 表名 <br>
-SELECT * FROM 表名 WHERE 字段名="某值"	<br>
-SELECT * FROM 表名 WHERE 字段名="某值" AND 字段名="某值"<br>
-SELECT * FROM 表名 WHERE 字段名="某值" OR 字段名="某值"<br>
-SELECT * FROM 表名  WHERE 字段名 LIKE '%关键字%' <br>
-(关键字左右两边任意个字符)<br>
-SELECT * FROM 表名  WHERE 字段名 LIKE '\_关键字\__' <br>
-(关键字左右两边任意个字符)<br>
+SELECT * FROM 表名 <br> <br>
+SELECT * FROM 表名 WHERE 字段名="某值"	<br> <br>
+SELECT * FROM 表名 WHERE 字段名="某值" AND 字段名="某值"<br> <br>
+SELECT * FROM 表名 WHERE 字段名="某值" OR 字段名="某值"<br> <br>
+SELECT * FROM 表名  WHERE 字段名 LIKE '%关键字%' 	(关键字左右两边任意个字符) <br> <br>
+SELECT * FROM 表名  WHERE 字段名 LIKE '\_关键字\__' 	(关键字左右两边任意个字符)<br> <br>
+
+注意：\* 为返回全部数据，\* 可以换成字段名<br>
 
 ## 删除
-DELETE FROM 表名 WHERE 字段名="某值"<br>
+DELETE FROM 表名 WHERE 字段名="某值"<br> <br>
 ## 插入
-INSERT INTO 表名 VALUES (值1,值2,值3.....)<br>
-INSERT INTO 表名 (列1, 列2,...) VALUES (值1, 值2,....)<br>
+INSERT INTO 表名 VALUES (值1,值2,值3.....)<br> <br>
+INSERT INTO 表名 (列1, 列2,...) VALUES (值1, 值2,....)<br> <br>
 
 ## 修改
-UPDATE 表名称 SET 列名称=新值 WHERE 列名称 = 某值<br>
-UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHERE 列名称 = 某值<br>
+UPDATE 表名称 SET 列名称=新值 WHERE 列名称 = 某值<br> <br>
+UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHERE 列名称 = 某值<br> <br>
