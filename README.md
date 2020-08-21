@@ -62,3 +62,45 @@ INSERT INTO 表名 (列1, 列2,...) VALUES (值1, 值2,....)<br> <br>
 ## 修改
 UPDATE 表名称 SET 列名称=新值 WHERE 列名称 = 某值<br> <br>
 UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHERE 列名称 = 某值<br> <br>
+
+# Vue Router
+## 路径参数
+1. 在路由中设置参数
+```js
+{
+    path: '/detail/:id/',
+    name: 'detail',
+    component: detail,
+    meta: {
+        title: '详情'
+    }
+}
+// 如果参数可传可不传则使用 detail/？id=1
+```
+2. 获取参数
+```js
+// 第一种
+const User = {
+  template: '<div>User {{ $route.params.id }}</div>'
+}
+// 第二种
+let id = this.$route.params.id
+```
+
+## 跳转路由并传参
+不用改变路由配置，直接执行js语句即可。
+```js
+// 点击后跳转路由并传参(任意类型参数)
+// 地址栏不显示传递的参数
+    toRegister() {
+      this.$router.push({
+        name: "访客预约",
+        params: { msg: "duan", msg2: "123" },
+      }); // 只能用 name
+    },
+// js接收
+let msg = this.$route.params.msg
+// html接收 
+{{ $route.params.msg }}
+```
+
