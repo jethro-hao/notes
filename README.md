@@ -90,24 +90,32 @@ let id = this.$route.params.id
 ## 跳转路由并传参
 不用改变路由配置，直接执行js语句即可。<br><br>
 地址栏不会显示传递的参数<br>
+
 ```js
 // 路由配置
+
 {
     path: 'register',
     name: '访客预约',
     component: () =>
     import('@/views/axiom/visitor/register'),
 },
+
 // 点击后跳转路由并传参(任意类型参数)
+
 toRegister() {
     this.$router.push({
     name: "访客预约",
     params: { msg: "duan", msg2: "123" },
     }); // 只能用 name
 },
+
 // js接收
+
 let msg = this.$route.params.msg
+
 // html接收 
+
 {{ $route.params.msg }}
 ```
 
