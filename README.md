@@ -78,7 +78,7 @@ UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHER
 ```
 2. 使用传参
 ```html
-<router-link to="/detail/2"></touter-link>
+<router-link to="/detail/2"></router-link>
 ```
 3. 获取参数
 ```js
