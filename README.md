@@ -75,9 +75,12 @@ UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHER
         title: '详情'
     }
 }
-// 如果参数可传可不传则使用 detail/？id=1
 ```
-2. 获取参数
+2. 使用传参
+```html
+<router-link to="/detail/2"></touter-link>
+```
+3. 获取参数
 ```js
 // 第一种
 const User = {
@@ -85,10 +88,11 @@ const User = {
 }
 // 第二种
 let id = this.$route.params.id
+console.log(id) // 2
 ```
 
 ## 跳转路由并传参
-不用改变路由配置，直接执行js语句即可。<br><br>
+不用改变路由配置，直接执行 js 语句即可。<br><br>
 地址栏不会显示传递的参数<br>
 
 ```js
