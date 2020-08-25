@@ -137,3 +137,15 @@ let msg = this.$route.params.msg
 {{ $route.params.msg }}
 ```
 注意：页面刷新后，传递的参数会失效。
+
+# 脚本
+```
+cd /e/code/notes
+
+unset msg
+read -p "请输入commit提交的描述: " msg
+git add -A
+git commit -m $msg
+git push
+git status
+```
