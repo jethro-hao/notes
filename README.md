@@ -139,6 +139,7 @@ let msg = this.$route.params.msg
 注意：页面刷新后，传递的参数会失效。
 
 # 脚本
+git 提交命令脚本，文件后缀 .sh
 ```
 cd /e/code/notes
 
