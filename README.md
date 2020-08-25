@@ -136,4 +136,4 @@ let msg = this.$route.params.msg
 
 {{ $route.params.msg }}
 ```
-注意：页面刷新后，传递的参数会失效。脚本提交
+注意：页面刷新后，传递的参数会失效。
