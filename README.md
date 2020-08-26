@@ -77,6 +77,44 @@ methods用的是也是最多的，一般的事件绑定，普通函数，请求�
 2. @click.stop="fn"		// 阻止事件冒泡
 3. @click.prevent="fn"		// 阻止事件的默认行为
 
+## Vue中动态生成二维码
+### 安装引入
+```
+npm install qrcodejs2 --save
+import QRCode from 'qrcodejs2';
+```
+### 使用
+
+HTML代码：
+
+```vue
+<div class="Qrcode_wrap">
+    <el-tag v-popover:popover @click.stop="handleQrcode('abcdefghijklmnopqrstuvwxyz')">二维码信息</el-tag>
+    <el-popover ref="popover" placement="bottom" width="200" trigger="click">
+        <div>
+            <p>二维码信息</p>
+            <p>code:abcdefghijklmnopqrstuvwxyz</p>
+            <div id="qrcode"></div>
+        </div>
+    </el-popover>
+</div>
+```
+
+JS代码：
+
+```js
+handleQrcode(codeText) {
+      document.getElementById("qrcode").innerHTML = "";
+      new QRCode(document.getElementById("qrcode"), {
+        text: codeText,
+        width: 128,
+        height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
+    },
+```
 # Vue Router
 ## 路径参数
 1. 在路由中设置参数
