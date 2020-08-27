@@ -96,7 +96,7 @@ HTML代码：
             <div id="qrcode"></div>
         </div>
     </el-popover>
-      <el-tag v-popover:popover @click.stop="handleQrcode('abcdefghijklmnopqrstuvwxyz')">二维码信息</el-tag>
+    <el-tag v-popover:popover @click.stop="handleQrcode('abcdefghijklmnopqrstuvwxyz')">二维码信息</el-tag>
 </div>
 ```
 
