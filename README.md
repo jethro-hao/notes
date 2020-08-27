@@ -89,7 +89,6 @@ HTML代码：
 
 ```vue
 <div class="Qrcode_wrap">
-    <el-tag v-popover:popover @click.stop="handleQrcode('abcdefghijklmnopqrstuvwxyz')">二维码信息</el-tag>
     <el-popover ref="popover" placement="bottom" width="200" trigger="click">
         <div>
             <p>二维码信息</p>
@@ -97,6 +96,7 @@ HTML代码：
             <div id="qrcode"></div>
         </div>
     </el-popover>
+      <el-tag v-popover:popover @click.stop="handleQrcode('abcdefghijklmnopqrstuvwxyz')">二维码信息</el-tag>
 </div>
 ```
 
