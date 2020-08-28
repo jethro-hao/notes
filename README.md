@@ -115,6 +115,38 @@ handleQrcode(codeText) {
       });
     },
 ```
+
+## watch
+```js
+  data(){
+      return {
+          addObj:{
+          	status:0,
+          }
+      }
+  }
+  // 监听下拉选择菜单值的改变
+  watch: {
+    "addObj.status": {
+      handler(val) {
+        if (val === 0) {
+          this.addObj.status = "审核";
+        }
+        if (val === 1) {
+          this.addObj.status = "待审核";
+        }
+        if (val === 2) {
+          this.addObj.status = "黑名单";
+        }
+        if (val === 3) {
+          this.addObj.status = "注销";
+        }
+      },
+    },
+    immediate: true,
+    deep: true,
+  },
+```
 # Vue Router
 ## 路径参数
 1. 在路由中设置参数
