@@ -118,6 +118,7 @@ handleQrcode(codeText) {
 
 ## watch
 ```js
+// 下拉选择菜单的props是status
   data(){
       return {
           addObj:{
