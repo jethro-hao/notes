@@ -49,27 +49,29 @@ git push
 # MySQL
 
 ## 查询
-SELECT * FROM 表名 <br> <br>
-SELECT * FROM 表名 WHERE 字段名="某值"	<br> <br>
-SELECT * FROM 表名 WHERE 字段名="某值" AND 字段名="某值"<br> <br>
-SELECT * FROM 表名 WHERE 字段名="某值" OR 字段名="某值"<br> <br>
-SELECT * FROM 表名  WHERE 字段名 LIKE '%关键字%' 	<br>
-(关键字左右两边任意个字符) <br> <br>
-SELECT * FROM 表名  WHERE 字段名 LIKE '\_关键字\__' 	<br>
-(关键字左边一个字符，右边两个字符)<br> <br>
-
-注意：\* 为返回全部数据，\* 可以换成字段名<br>
-
+```
+SELECT * FROM 表名 
+SELECT * FROM 表名 WHERE 字段名="某值"	
+SELECT * FROM 表名 WHERE 字段名="某值" AND 字段名="某值"
+SELECT * FROM 表名 WHERE 字段名="某值" OR 字段名="某值"
+SELECT * FROM 表名 WHERE 字段名 LIKE '%关键字%' 		//关键字左右两边任意个字符
+SELECT * FROM 表名 WHERE 字段名 LIKE '\_关键字\__' 	//关键字左边一个字符，右边两个字符
+注意：\* 为返回全部数据，\* 可以换成字段名
+```
 ## 删除
-DELETE FROM 表名 WHERE 字段名="某值"<br> <br>
+```
+DELETE FROM 表名 WHERE 字段名="某值"
+```
 ## 插入
-INSERT INTO 表名 VALUES (值1,值2,值3.....)<br> <br>
-INSERT INTO 表名 (列1, 列2,...) VALUES (值1, 值2,....)<br> <br>
-
+```
+INSERT INTO 表名 VALUES (值1,值2,值3.....)
+INSERT INTO 表名 (列1, 列2,...) VALUES (值1, 值2,....)
+```
 ## 修改
-UPDATE 表名称 SET 列名称=新值 WHERE 列名称 = 某值<br> <br>
-UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHERE 列名称 = 某值<br> <br>
-
+```
+UPDATE 表名称 SET 列名称=新值 WHERE 列名称 = 某值
+UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHERE 列名称 = 某值
+```
 # Vue
 ## methods 、 computed、watch区别
 computed是基于响应式依赖进行缓存的。何为响应式依赖呢？例如声明在data中的变量既有响应式的性质，用通俗一点的话讲就是，计算属性的触发条件是他的依赖变化了才会重新执行。例如上面的列子一样，只有data中定义的message发生变化了，计算属性才会执行，而且最终返回的事一个结果。<br> <br>
@@ -80,10 +82,11 @@ methods用的是也是最多的，一般的事件绑定，普通函数，请求�
 
 
 ## @click
+```
 1. @click="fn"		// 普通
 2. @click.stop="fn"		// 阻止事件冒泡
 3. @click.prevent="fn"		// 阻止事件的默认行为
-
+```
 ## Vue中动态生成二维码
 ### 安装引入
 ```
