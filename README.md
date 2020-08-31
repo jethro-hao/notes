@@ -24,7 +24,7 @@
 查看当前文件路径：pwd
 ```
 
-## 合并分支
+## 合并到主分支
 ```
 git checkout master
 git pull
