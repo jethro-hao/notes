@@ -73,6 +73,15 @@ UPDATE 表名称 SET 列名称=新值 WHERE 列名称 = 某值
 UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHERE 列名称 = 某值
 ```
 # Vue
+## style
+Vue组件中，在style设置为scoped的时候，里面在写样式对子组件是不生效的，如果想让某些样式对所以子组件都生效，可以使用 /deep/ 深度选择器，只给父类加即可。
+Firfox中失效
+
+```css
+/deep/ .class1{
+	font-size:14px;
+}
+```
 ## methods 、 computed、watch区别
 computed是基于响应式依赖进行缓存的。何为响应式依赖呢？例如声明在data中的变量既有响应式的性质，用通俗一点的话讲就是，计算属性的触发条件是他的依赖变化了才会重新执行。例如上面的列子一样，只有data中定义的message发生变化了，计算属性才会执行，而且最终返回的事一个结果。<br> <br>
 而methods就像我们写的普通函数一样，需要我们主动去调用才会执行。而不是依赖数据的变换，并且也不需要返回一个结果，可以仅仅执行一个过程。当我们在获取一个数据时需要对一个大的数组进行大量循环才能获取时，那我们选择计算属性，基于依赖进行缓存那将会节省大量的性能消耗。而不是像methods一样每次调用都执行。<br><br>
@@ -223,7 +232,6 @@ let msg = this.$route.params.msg
 git 提交命令脚本，文件后缀 .sh
 ```
 cd /e/code/notes
-
 unset msg
 read -p "请输入commit提交的描述: " msg
 git add -A
