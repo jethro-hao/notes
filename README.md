@@ -331,11 +331,11 @@ data(){
       }
     },
     handleClose(done) {
-      this.dialogVisible = false;
+    	this.dialogVisible = false;
     },
     // 移除excel表
     handleRemove(file, fileList) {
-      this.fileTemp = null;
+   		this.fileTemp = null;
     },
 ```
 ### 导出表格
@@ -351,26 +351,27 @@ plain
 JS部分
 ```js
 formatJson(filterVal, jsonData) {
-      return jsonData.map((v) => filterVal.map((j) => v[j]));
-    },
-    exportToExcel() {
-      let tHeaderArr = [];
-      let filterValArr = [];
-      this.tableOption.column.map((v, index) => {
+	return jsonData.map((v) => filterVal.map((j) => v[j]));
+},
+//点击导出按钮
+exportToExcel() {
+    let tHeaderArr = [];
+    let filterValArr = [];
+    this.tableOption.column.map((v, index) => {
         if (!v.editDisabled) {
-          tHeaderArr.push(v.label);
-          filterValArr.push(v.prop);
+            tHeaderArr.push(v.label);
+            filterValArr.push(v.prop);
         }
-      });
-      require.ensure([], () => {
+    });
+    require.ensure([], () => {
         const { export_json_to_excel } = require("@/vendor/Export2Excel");
         const tHeader = tHeaderArr;
         const filterVal = filterValArr;
         const list = this.tableData;
         const data = this.formatJson(filterVal, list);
         export_json_to_excel(tHeader, data, "访客信息");
-      });
-    },
+    });
+},
 ```
 ### 下载模板
 ```js
