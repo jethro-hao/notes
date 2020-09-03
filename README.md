@@ -405,7 +405,7 @@ exportToExcel() {
     }
 }
 ```
-2. 使用传参
+2. 传参
 ```html
 <router-link to="/detail/2"></router-link>
 ```
