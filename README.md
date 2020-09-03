@@ -469,8 +469,8 @@ git status
 1. 数字+字母
 ```js
 randomstring(L) {
-	// 使用方法
-	// randomstring(6)
+    // 使用方法
+    // randomstring(6)
     var s = "";
     var randomchar = function () {
         var n = Math.floor(Math.random() * 62);
@@ -485,7 +485,7 @@ randomstring(L) {
 2. 支持自定义
 ```js
 randomString(len, charSet) {
-	// 使用方法
+    // 使用方法
     // randomString(5);
     // randomString(5, 'PICKCHARSFROMTHISSET');
     charSet =
