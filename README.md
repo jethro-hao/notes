@@ -466,9 +466,11 @@ git status
 ```
 # 小功能
 ## 随机字符串
-数字+字母
+1. 数字+字母
 ```js
 randomstring(L) {
+	// 使用方法
+	// randomstring(6)
     var s = "";
     var randomchar = function () {
         var n = Math.floor(Math.random() * 62);
@@ -478,5 +480,22 @@ randomstring(L) {
     };
     while (s.length < L) s += randomchar();
     return s;
+},
+```
+2. 支持自定义
+```js
+randomString(len, charSet) {
+	// 使用方法
+    // randomString(5);
+    // randomString(5, 'PICKCHARSFROMTHISSET');
+    charSet =
+    charSet ||
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var randomString = "";
+    for (var i = 0; i < len; i++) {
+        var randomPoz = Math.floor(Math.random() * charSet.length);
+        randomString += charSet.substring(randomPoz, randomPoz + 1);
+    }
+    return randomString;
 },
 ```
