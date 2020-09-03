@@ -393,7 +393,7 @@ exportToExcel() {
 ```
 
 # Vue Router
-## 路径参数
+## 路径参数1
 1. 在路由中设置参数
 ```js
 {
@@ -420,7 +420,7 @@ let id = this.$route.params.id
 console.log(id) // 2
 ```
 
-## 跳转路由并传参
+## 路径参数2
 不用改变路由配置，直接执行 js 语句即可。<br><br>
 地址栏不会显示传递的参数<br>
 
