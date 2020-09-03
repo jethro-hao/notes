@@ -499,3 +499,23 @@ randomString(len, charSet) {
     return randomString;
 },
 ```
+## UUID
+vue 中使用UUID
+1. 安装
+```
+npm install uuid
+```
+2. 导入
+```
+import { v4 as uuidv4 } from 'uuid';
+```
+3. 使用
+```
+uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+```
+4 . 使用 CommonJS 语法：
+```
+const { v4: uuidv4 } = require('uuid');
+
+uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+```
