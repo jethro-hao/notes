@@ -178,7 +178,57 @@ src
 		Blob.js
 		Export2Excel.js
 ```
-### 导入表格
+
+### 1. 导出表格
+HTML部分
+```html
+<el-button
+class="export_export_btn light_btn menu_btn menu_btn_2"
+size="small"
+plain
+@click.stop="exportToExcel"
+>导出2</el-button>
+```
+JS部分
+```js
+formatJson(filterVal, jsonData) {
+	return jsonData.map((v) => filterVal.map((j) => v[j]));
+},
+//点击导出按钮
+exportToExcel() {
+    let tHeaderArr = [];
+    let filterValArr = [];
+    this.tableOption.column.map((v, index) => {
+        tHeaderArr.push(v.label);
+        filterValArr.push(v.prop);
+    });
+    require.ensure([], () => {
+        const { export_json_to_excel } = require("@/vendor/Export2Excel");
+        const tHeader = tHeaderArr;
+        const filterVal = filterValArr;
+        const list = this.tableData;
+        const data = this.formatJson(filterVal, list);
+        export_json_to_excel(tHeader, data, "访客信息");
+    });
+},
+```
+### 2. 下载模板
+```js
+    // 下载Excel模板
+    outExe() {
+      let tHeaderArr = [];
+      this.tableOption.column.map((v, index) => {
+        tHeaderArr.push(v.label);
+      });
+      require.ensure([], () => {
+        const { export_json_to_excel } = require("@/vendor/Export2Excel"); //引入文件
+        const tHeader = tHeaderArr; //将对应的属性名转换成中文
+        const data = [];
+        export_json_to_excel(tHeader, data, "访客信息模板");
+      });
+    },
+```
+### 3. 导入表格
 HTML部分
 ```html
  <!-- 导入 dialog -->
@@ -338,55 +388,7 @@ data(){
    		this.fileTemp = null;
     },
 ```
-### 导出表格
-HTML部分
-```html
-<el-button
-class="export_export_btn light_btn menu_btn menu_btn_2"
-size="small"
-plain
-@click.stop="exportToExcel"
->导出2</el-button>
-```
-JS部分
-```js
-formatJson(filterVal, jsonData) {
-	return jsonData.map((v) => filterVal.map((j) => v[j]));
-},
-//点击导出按钮
-exportToExcel() {
-    let tHeaderArr = [];
-    let filterValArr = [];
-    this.tableOption.column.map((v, index) => {
-        tHeaderArr.push(v.label);
-        filterValArr.push(v.prop);
-    });
-    require.ensure([], () => {
-        const { export_json_to_excel } = require("@/vendor/Export2Excel");
-        const tHeader = tHeaderArr;
-        const filterVal = filterValArr;
-        const list = this.tableData;
-        const data = this.formatJson(filterVal, list);
-        export_json_to_excel(tHeader, data, "访客信息");
-    });
-},
-```
-### 下载模板
-```js
-    // 下载Excel模板
-    outExe() {
-      let tHeaderArr = [];
-      this.tableOption.column.map((v, index) => {
-        tHeaderArr.push(v.label);
-      });
-      require.ensure([], () => {
-        const { export_json_to_excel } = require("@/vendor/Export2Excel"); //引入文件
-        const tHeader = tHeaderArr; //将对应的属性名转换成中文
-        const data = [];
-        export_json_to_excel(tHeader, data, "访客信息模板");
-      });
-    },
-```
+
 
 # Vue Router
 ## 路径参数1
