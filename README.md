@@ -358,10 +358,8 @@ exportToExcel() {
     let tHeaderArr = [];
     let filterValArr = [];
     this.tableOption.column.map((v, index) => {
-        if (!v.editDisabled) {
-            tHeaderArr.push(v.label);
-            filterValArr.push(v.prop);
-        }
+        tHeaderArr.push(v.label);
+        filterValArr.push(v.prop);
     });
     require.ensure([], () => {
         const { export_json_to_excel } = require("@/vendor/Export2Excel");
@@ -379,9 +377,7 @@ exportToExcel() {
     outExe() {
       let tHeaderArr = [];
       this.tableOption.column.map((v, index) => {
-        if (!v.editDisabled) {
-          tHeaderArr.push(v.label);
-        }
+        tHeaderArr.push(v.label);
       });
       require.ensure([], () => {
         const { export_json_to_excel } = require("@/vendor/Export2Excel"); //引入文件
