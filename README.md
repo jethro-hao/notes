@@ -72,6 +72,18 @@ INSERT INTO 表名 (列1, 列2,...) VALUES (值1, 值2,....)
 UPDATE 表名称 SET 列名称=新值 WHERE 列名称 = 某值
 UPDATE 表名称 SET 列名称=新值,列名称=新值,列名称=新值.... WHERE 列名称 = 某值
 ```
+# ES6
+### Object.keys()
+Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致 。
+```js
+let person = {
+  name: "tom",
+  sex: "1",
+  age: 18,
+};
+const obj = Object.keys(person);
+console.log(obj);//["name", "sex", "age"]
+```
 # Vue
 ## style
 Vue组件中，在style设置为scoped的时候，里面在写样式对子组件是不生效的，如果想让某些样式对所以子组件都生效，可以使用 /deep/ 深度选择器，只给父类加即可。
@@ -555,3 +567,4 @@ num = num.toFixed(2);             //3.15
 ```
 Math.floor(15.7784514000 * 100) / 100               //输出结果为 15.77
 ```
+
