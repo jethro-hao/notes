@@ -64,20 +64,20 @@ import QRCode from 'qrcodejs2';
 HTML代码：
 
 ```vue
- <template slot="Qrcode" slot-scope="scope">
-            <el-popover :ref="scope.row.recordId" placement="left" width="200" trigger="click">
-              <div>
-                <p>{{scope.row.name}}的二维码信息</p>
-                <p>Qrcode：{{scope.row.Qrcode}}</p>
-                <div :id="'qr' + scope.row.recordId "></div>
-              </div>
-              <el-tag
-                slot="reference"
-                class="tag_show tag_pointer"
-                @click="handleQrcode(scope.row.Qrcode,scope.row.recordId)"
-              >二维码信息</el-tag>
-            </el-popover>
-          </template>
+<template slot="Qrcode" slot-scope="scope">
+	<el-popover :ref="scope.row.recordId" placement="left" width="200" trigger="click">
+        <div>
+            <p>{{scope.row.name}}的二维码信息</p>
+            <p>Qrcode：{{scope.row.Qrcode}}</p>
+            <div :id="'qr' + scope.row.recordId "></div>
+        </div>
+        <el-tag
+        slot="reference"
+        class="tag_show tag_pointer"
+        @click="handleQrcode(scope.row.Qrcode,scope.row.recordId)"
+        >二维码信息</el-tag>
+    </el-popover>
+</template>
 ```
 
 JS代码：
