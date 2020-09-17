@@ -64,32 +64,38 @@ import QRCode from 'qrcodejs2';
 HTML代码：
 
 ```vue
-<div class="Qrcode_wrap">
-    <el-popover ref="popover" placement="bottom" width="200" trigger="click">
-        <div>
-            <p>二维码信息</p>
-            <p>code:abcdefghijklmnopqrstuvwxyz</p>
-            <div id="qrcode"></div>
-        </div>
-    </el-popover>
-    <el-tag v-popover:popover @click.stop="handleQrcode('abcdefghijklmnopqrstuvwxyz')">二维码信息</el-tag>
-</div>
+ <template slot="Qrcode" slot-scope="scope">
+            <el-popover :ref="scope.row.recordId" placement="left" width="200" trigger="click">
+              <div>
+                <p>{{scope.row.name}}的二维码信息</p>
+                <p>Qrcode：{{scope.row.Qrcode}}</p>
+                <div :id="'qr' + scope.row.recordId "></div>
+              </div>
+              <el-tag
+                slot="reference"
+                class="tag_show tag_pointer"
+                @click="handleQrcode(scope.row.Qrcode,scope.row.recordId)"
+              >二维码信息</el-tag>
+            </el-popover>
+          </template>
 ```
 
 JS代码：
 
 ```js
-handleQrcode(codeText) {
-      document.getElementById("qrcode").innerHTML = "";
-      new QRCode(document.getElementById("qrcode"), {
-        text: codeText,
-        width: 128,
-        height: 128,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H,
-      });
-    },
+// 二维码
+  handleQrcode(codeText, id) {
+    document.getElementById(`qr${id}`).innerHTML = "";
+    console.log(document.getElementById(`qr${id}`));
+    new QRCode(document.getElementById(`qr${id}`), {
+      text: codeText,
+      width: 128,
+      height: 128,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+  },
 ```
 ## 表格的导入导出
 依赖安装
