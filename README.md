@@ -45,6 +45,11 @@ git push
     git push -u origin 分支名 
 
 ```
+## 其他
+VsCode 同步 远程的分支
+```
+git fetch --prune
+```
 
 # MySQL
 
