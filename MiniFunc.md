@@ -125,3 +125,14 @@ function dateFormat(date) {
 }
 console.log(dateFormat(new Date()))
 ```
+## 提交脚本
+git 提交命令脚本，文件后缀 .sh
+```
+cd /e/code/notes
+unset msg
+read -p "请输入commit提交的描述: " msg
+git add -A
+git commit -m $msg
+git push
+git status
+```
