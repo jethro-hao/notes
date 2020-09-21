@@ -125,7 +125,8 @@ function dateFormat(date) {
 }
 console.log(dateFormat(new Date()))
 ```
-## 手机号脱敏处理
+## 脱敏处理
+1. 手机号的脱敏处理
 ```js
 // 中间四位用星号显示
 var str="18912341234"
@@ -133,6 +134,23 @@ var pat=/(\d{3})\d*(\d{4})/
 var b=str.replace(pat,'$1****$2');
 console.log(b)
 ```
+2. 证件号的脱敏处理
+```js
+str.replace(/^(.{4})(?:\w+)(.{4})$/, "$1****$2")
+```
+```js
+//数字类型
+
+certificatecodecopy = certificatecode.replace(/^(.{6})(?:\d+)(.{4})$/,  "\$1****\$2");
+
+//所有类型
+
+enginenocopy = engineno.replace(/^(.{2})(?:\w+)(.{1})$/, "\$1****\$2");
+
+
+enginenocopy = engineno.replace(/^(.{4})(?:\w+)(.{4})$/, "\$1****\$2");
+```
+
 ## 提交脚本
 git 提交命令脚本，文件后缀 .sh
 ```
