@@ -127,6 +127,7 @@ console.log(dateFormat(new Date()))
 ```
 ## 手机号脱敏处理
 ```js
+// 中间四位用星号显示
 var str="18912341234"
 var pat=/(\d{3})\d*(\d{4})/
 var b=str.replace(pat,'$1****$2');
