@@ -46,7 +46,17 @@ git push
 
 ```
 ## 其他
-VsCode 同步 远程的分支
+
 ```
-git fetch --prune
+查看本地分支：git branch
+查看远程分支：git branch -r
+查看所有分支：git branch -a
+
+VsCode 同步 远程的分支：git fetch --prune
+
+删除本地分支：git branch -d 分支名 
+强制删除本地分支：git branch -D 分支名
+
+删除远程分支：git push origin --delete 分支名
+
 ```
