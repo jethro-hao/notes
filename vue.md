@@ -40,11 +40,10 @@ methods用的是也是最多的，一般的事件绑定，普通函数，请求�
           this.addObj.status = "待审核";
         }
       },
+      immediate: true,
+      deep: true,
     },
-    immediate: true,
-    deep: true,
-  },
-  form:{
+    form:{
       handler(newVal,oldVal){
 		console.log(newVal)
       },
@@ -52,7 +51,9 @@ methods用的是也是最多的，一般的事件绑定，普通函数，请求�
 	  immediate: true,
 	  //所有属性都加上监听器，当对象属性较多时，每个属性值的变化都会执行handler
       deep: true,
-  }
+  	}
+  },
+  
 ```
 ## @click
 ```
