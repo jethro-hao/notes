@@ -19,9 +19,20 @@
 查看操作记录：git reflog
 根据操作记录回退：git reset --hard 版本号
 
+查看本地分支：git branch
+查看远程分支：git branch -r
+查看所有分支：git branch -a
+
+VsCode 同步 远程的分支：git fetch --prune
+
+删除本地分支：git branch -d 分支名 
+强制删除本地分支：git branch -D 分支名
+删除远程分支：git push origin --delete 分支名
+
 创建文件夹：mkdir
 创建文件 touch
 查看当前文件路径：pwd
+
 ```
 
 ## 合并到主分支
@@ -43,20 +54,5 @@ git push
     git remote remove origin
     git remote add origin 远程仓库地址
     git push -u origin 分支名 
-
-```
-## 其他
-
-```
-查看本地分支：git branch
-查看远程分支：git branch -r
-查看所有分支：git branch -a
-
-VsCode 同步 远程的分支：git fetch --prune
-
-删除本地分支：git branch -d 分支名 
-强制删除本地分支：git branch -D 分支名
-
-删除远程分支：git push origin --delete 分支名
 
 ```
