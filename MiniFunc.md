@@ -124,6 +124,15 @@ function dateFormat(date) {
     return ''
 }
 console.log(dateFormat(new Date()))
+
+
+
+// 将 yyyy-MM-dd HH:mm:ss 格式的时间转换为时间戳
+    str2Time(newTime) {
+      var newstr = newTime.replace(/-/g, "/");
+      var date = new Date(newstr);
+      return date.getTime();
+    }
 ```
 ## 脱敏处理
 1. 手机号的脱敏处理
@@ -162,3 +171,4 @@ git commit -m $msg
 git push
 git status
 ```
+
