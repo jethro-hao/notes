@@ -1,4 +1,7 @@
+
+
 # Vue
+
 ## style
 Vue组件中，在style设置为scoped的时候，里面在写样式对子组件是不生效的，如果想让某些样式对所以子组件都生效，可以使用 /deep/ 深度选择器，只给父类加即可。
 Firfox中失效
@@ -327,4 +330,63 @@ data(){
     handleRemove(file, fileList) {
    		this.fileTemp = null;
     },
+```
+
+# api
+```
+import request from '@/router/axios'
+
+export function fetchList(query) {
+  return request({
+    url: '/admin/userinfo/page',
+    method: 'get',
+    params: query
+  })
+}
+
+export function addObj(obj) {
+  return request({
+    url: '/admin/userinfo',
+    method: 'post',
+    data: obj
+  })
+}
+
+export function getObj(id) {
+  return request({
+    url: '/admin/userinfo/' + id,
+    method: 'get'
+  })
+}
+
+export function delObj(id) {
+  return request({
+    url: '/admin/userinfo/' + id,
+    method: 'delete'
+  })
+}
+
+export function putObj(obj) {
+  return request({
+    url: '/admin/userinfo',
+    method: 'put',
+    data: obj
+  })
+}
+export function getDeptTree() {
+  return request({
+    url: '/admin/dept/tree',
+    method: 'get'
+  })
+}
+export function lostCard(userId) {
+  //卡挂失
+  return request({
+    url: '/admin/userinfo/lostcard',
+    method: 'post',
+    params: {
+      userId: userId
+    }
+  })
+}
 ```
