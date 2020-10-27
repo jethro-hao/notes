@@ -332,7 +332,7 @@ data(){
     },
 ```
 
-# api
+## api
 ```
 import request from '@/router/axios'
 
@@ -389,4 +389,22 @@ export function lostCard(userId) {
     }
   })
 }
+```
+
+## 页面未渲染完全问题
+1. 在一个页面渲染完成后再做另外一件事情
+```
+this.$nextTick(() => {
+
+　　// todo something
+
+　　// 同上
+
+});
+```
+2. 强制刷新
+```
+this.$forceUpdate();
+
+// next todo something
 ```
