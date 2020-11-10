@@ -53,3 +53,11 @@
           }
         },
 ```
+
+# avue-crud
+表格行高亮显示
+```
+tableOption:{
+ highlightCurrentRow: true, //点击行高亮
+}
+```
