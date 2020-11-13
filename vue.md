@@ -408,3 +408,28 @@ this.$forceUpdate();
 
 // next todo something
 ```
+## Vue在父组件中重新渲染子组件
+```
+<template>
+  <Child v-if="hackReset" />
+</template>
+<script>
+export default{
+	data(){
+		return {
+			hackSet:false,
+		}
+	}
+	methods:{
+	//需要重新渲染时调用aaa
+	aaa() {
+		this.hackReset = false；
+	      	this.$nextTick(() => {
+	       		this.hackReset = true
+	      	})
+      	}
+	}	
+}
+</script>
+
+```
