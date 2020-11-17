@@ -52,6 +52,15 @@
             children: "children"
           }
         },
+        
+        
+{
+    label: "证件类型",
+    prop: "certificateType",
+    type: "select",
+    filterable: true,//搜索
+    dicUrl: "/admin/dict/type/sys_certificate_type"
+},
 ```
 
 # avue-crud
