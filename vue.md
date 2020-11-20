@@ -433,3 +433,14 @@ export default{
 </script>
 
 ```
+
+
+## 图片请求失败后显示一张默认的图片
+```
+ <img
+     :src="scope.row.photoUrl"
+     :alt="scope.row.photoUrl"
+     style="max-height: 50px; max-width: 130px"
+     onerror="onerror=null;src='/img/testimg.png'"
+/>
+```
