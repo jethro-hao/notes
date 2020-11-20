@@ -436,6 +436,7 @@ export default{
 
 
 ## 图片请求失败后显示一张默认的图片
+想要默认显示的图片地址写在onerror的src里
 ```
  <img
      :src="scope.row.photoUrl"
