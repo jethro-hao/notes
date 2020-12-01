@@ -133,6 +133,15 @@ console.log(dateFormat(new Date()))
       var date = new Date(newstr);
       return date.getTime();
     }
+
+  	// var date = new Date("2014-04-23 18:55:49:123");
+    // // 有三种方式获取
+    // var time1 = date.getTime();
+    // var time2 = date.valueOf();
+    // var time3 = Date.parse(date);
+    // console.log(time1); //1398250549123
+    // console.log(time2); //1398250549123
+    // console.log(time3); //1398250549000
 ```
 ## 脱敏处理
 1. 手机号的脱敏处理
