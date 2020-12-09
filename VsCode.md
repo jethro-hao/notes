@@ -1,6 +1,6 @@
 ## 插件
 ### Power Mode
-敲代码特效
+敲代码特效，settings.json中配置
 ```json
  //是否开启
   "powermode.enabled": true,
