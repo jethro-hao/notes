@@ -445,3 +445,28 @@ export default{
      onerror="onerror=null;src='/img/testimg.png'"
 />
 ```
+
+## vue页面刷新
+```
+export default {
+    inject: ['reload'],     // 注入 reload 方法
+    data(){
+        。。。。
+    },
+    method: {
+        set: function(id){
+             let param = {
+                  "recommendedConsultant.id": this.recommendedConsultant_id,
+                   "recommendedConsultant.sequence": this.recommendedConsultant_sequence,
+                   "recommendedConsultant.consultant_id": id
+              }
+              setRecommendedAdvisor(param).then((data) => {
+                   this.$message({ message: data.ret.retMsg });
+                   if(data.ret.succeed){
+                       this.reload()           // 调用刷新方法
+                   }
+              });
+        }
+    }
+}
+```
