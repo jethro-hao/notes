@@ -56,3 +56,8 @@ git push
     git push -u origin 分支名 
 
 ```
+## 本地更换远程地址
+```
+ git remote set-url origin http://*****test.git
+ 
+```
