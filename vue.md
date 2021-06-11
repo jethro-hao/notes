@@ -470,3 +470,41 @@ export default {
     }
 }
 ```
+
+## 点击元素切换全屏
+
+```html
+<span @click="screen">全屏</span>
+```
+data:fullscreen:false,
+```js
+
+screen(){
+        // let element = document.documentElement;//设置后就是我们平时的整个页面全屏效果
+        let element = document.getElementById('con_lf_top_div');//设置后就是   id==con_lf_top_div 的容器全屏
+          if (this.fullscreen) {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if (document.webkitCancelFullScreen) {
+              document.webkitCancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+            }
+          } else {
+            if (element.requestFullscreen) {
+              element.requestFullscreen();
+            } else if (element.webkitRequestFullScreen) {
+              element.webkitRequestFullScreen();
+            } else if (element.mozRequestFullScreen) {
+              element.mozRequestFullScreen();
+            } else if (element.msRequestFullscreen) {
+              // IE11
+              element.msRequestFullscreen();
+            }
+          }
+          this.fullscreen = !this.fullscreen;
+ 
+      }
+```
